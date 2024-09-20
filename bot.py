@@ -24,7 +24,6 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 # Construct the full paths to the files
 data_file = os.path.join(script_dir, "data.txt")
 
-
 class W3BFLIX:
     def __init__(self):
         self.line = white + "~" * 50
@@ -168,9 +167,9 @@ class W3BFLIX:
                 If Auto Claim Bot has not sent a message automatically, then you should copy message "/start ...." and send to W3BFLIX bot manually"""
             )
             
-            # Wait for 24 hours before running the loop again
-            self.log(f"{yellow}Waiting for 24 hours before the next run...")
-            time.sleep(86400)  # 24 hours in seconds
+            # Wait for 12 hours before running the loop again
+            self.log(f"{yellow}Waiting for 12 hours before the next run...")
+            time.sleep(43200)  # 12 hours in seconds
 
 
 if __name__ == "__main__":
