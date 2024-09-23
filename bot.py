@@ -23,6 +23,7 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 
 # Construct the full paths to the files
 data_file = os.path.join(script_dir, "data.txt")
+stop_file = os.path.join(script_dir, "stop.txt")  # Stop file path
 
 class W3BFLIX:
     def __init__(self):
@@ -110,6 +111,11 @@ class W3BFLIX:
         print(self.banner)
         
         while True:
+            # Check if the stop file exists
+            if os.path.exists(stop_file):
+                self.log(f"{red}Stop file detected. Exiting the loop.")
+                break
+
             data = open(data_file, "r").read().splitlines()
             num_acc = len(data)
             self.log(self.line)
@@ -167,9 +173,9 @@ class W3BFLIX:
                 If Auto Claim Bot has not sent a message automatically, then you should copy message "/start ...." and send to W3BFLIX bot manually"""
             )
             
-            # Wait for 12 hours before running the loop again
-            self.log(f"{yellow}Waiting for 12 hours before the next run...")
-            time.sleep(43200)  # 12 hours in seconds
+            # Wait for 13 hours before running the loop again
+            self.log(f"{yellow}Waiting for 13 hours before the next run...")
+            time.sleep(46800)  # 13 hours in seconds
 
 
 if __name__ == "__main__":
